@@ -38,7 +38,7 @@ const Post =(props)=>{
                     style={styles.video}
                     onError={(e)=>console.log(e)}
                     resizeMode={'cover'}
-                    repeat={true}
+                    repeat={false}
                     paused={paused}/>
             
 

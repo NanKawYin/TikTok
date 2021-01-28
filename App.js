@@ -5,7 +5,7 @@
  * @format
  * @flow strict-local
  */
-
+import 'react-native-gesture-handler';
 import React from 'react';
 import {
   SafeAreaView,
@@ -16,6 +16,7 @@ import {
   StatusBar,
 } from 'react-native';
 import Home from './src/screens/Home';
+import Navigation from './src/nivagation';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 
@@ -23,9 +24,9 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 const App: () => React$Node = () => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <Home/>
+      <StatusBar barStyle="light-content" />
+      <SafeAreaView style={{flex: 1,backgroundColor:'black'}}>
+        <Navigation/>
       </SafeAreaView>
     </>
   );
