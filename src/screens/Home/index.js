@@ -1,27 +1,20 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text,FlatList,Dimensions } from 'react-native';
 import Post from '../../components/Post';
 
-const post1 = {
-    id:'p1',
-    videoUri:'/Users/user/TikTok/src/assets/1.MP4',
-    user:{
-        id:'u1',
-        username:'nankawyin',
-        imageUri:'/Users/user/TikTok/src/assets/lisa.jpg',
-    },
-    description:'charlend tiktok',
-    songName:'Nf - The secret',
-    songImage:'/Users/user/TikTok/src/assets/lisa.jpg',
-    likes:123,
-    comments:12,
-    share:44,
-}
+import posts from '../../../data/posts';
 
 const Home = () => {
     return(
         <View>
-            <Post post={post1}/>
+           <FlatList
+           data={posts}
+           renderItem={({item}) => <Post post={item}/>}
+           showsVerticalScrollIndicator={false}
+           snapToInterval={Dimensions.get('window').height -80}
+           snapToAlignment={'start'}
+           decelerationRate={'fast'}
+           />
         </View>
     );
 }
